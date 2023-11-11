@@ -11,7 +11,7 @@ const About = () => {
                 <h3 style={{ color: 'black' }}> algorhythmz</h3>
             </header >
             <div className="album-box">insert album cover!</div>
-            
+            <></>
         </div>
     );
 };
