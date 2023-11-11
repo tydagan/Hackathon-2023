@@ -15,7 +15,7 @@ const Home = () => {
             </form>
             <button>
                 <Link to="/search" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    Search
+                    Start
                 </Link>
             </button>
             <p id="info-text">Your lyrics are right here, waiting for you!</p>
