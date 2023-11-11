@@ -10,12 +10,13 @@
 }
 
 input[type=text] {
+    background-color: #d7d7d7;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 1px;
-    color: white;
+    border: 10px;
+    color: black;
 }
 
 ::placeholder {
