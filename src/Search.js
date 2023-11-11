@@ -13,12 +13,6 @@ const Result = () => {
                 <input type="text"></input>
             </header >
             <div className="album-box">insert album cover!</div>
-<<<<<<< HEAD
-            <></>
-            <div>
-                <p>Word received: {word}</p>
-            </div>
-=======
             <div className="Song-title">[SONG NAME]</div>
             <div className="Song-subtitle">produced by ALGORHYTHMZ</div>
 
@@ -30,7 +24,6 @@ const Result = () => {
                 Ten kills on the board right now, just wiped out Tomato Town
             </div>
 
->>>>>>> refs/remotes/origin/routing
         </div>
     );
 };

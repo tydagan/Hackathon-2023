@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+
 
 const Home = () => {
-    const navigate = useNavigate();
     const [inputValue, setInputValue] = useState('');
 
     const handleChange = (event) => {
@@ -13,54 +14,12 @@ const Home = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        // Do something with the input value, e.g., send it to an API, etc.
         console.log('Input Value:', inputValue);
-        navigate('/search', { state: { word: inputValue } });
     };
-
     return (
         <div className="Home">
             <header className="App-header">
-<<<<<<< HEAD
-                <h3 style={{ color: 'black' }}> algorhythmz</h3>
-            </header>
-            <div>
-                <img src={logo} className="App-logo" alt="logo" />
-            </div>
-            <form
-                onSubmit={handleSubmit}
-                action="/search"
-                autoComplete="off"
-                method="GET"
-                role="search"
-            >
-                <input
-                    value={inputValue}
-                    onChange={handleChange}
-                    name="q"
-                    type="text"
-                    inputMode="search"
-                    style={{
-                        width: '500px',
-                        height: '30px',
-                        borderRadius: '10px',
-                        fontFamily: 'sans-serif',
-                    }}
-                />
-                <button
-                    type="submit"
-                    style={{
-                        width: '100px',
-                        height: '30px',
-                        borderRadius: '10px',
-                        fontFamily: 'sans-serif',
-                    }}
-                >
-                    <Link to={{ pathname: '/search', state: { word: inputValue } }} style={{ textDecoration: 'none', color: 'inherit' }}>
-                        Start
-                    </Link>
-                </button>
-            </form>
-=======
                 <a href="/">
                     <h3 style={{ color: 'black' }}> ALGORYTHMZ</h3>
                 </a>
@@ -74,7 +33,6 @@ const Home = () => {
                     Start
                 </Link>
             </button>
->>>>>>> refs/remotes/origin/routing
             <p id="info-text">Your lyrics are right here, waiting for you!</p>
         </div >
     );
