@@ -7,6 +7,19 @@
   pointer-events: none;
 }
 
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #ea4d3d;
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
 
 .App-header {
   background-color: #282c34;
