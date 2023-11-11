@@ -8,7 +8,7 @@ const Result = () => {
     return (
         <div className="Result">
             <header className="Result-header">
-                <h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3>
+                <a href="/"><h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3></a>
             </header >
             <div className="album-box">insert album cover!</div>
             <div className="Song-title">[SONG NAME]</div>
