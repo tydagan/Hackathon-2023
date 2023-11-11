@@ -35,6 +35,29 @@ input[type=text] {
     margin-bottom: 150px;
 }
 
+.Result-header {
+    background-color: #fe3a30;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    font-size: calc(2vmin);
+    color: white;
+    padding-left: 10px;
+    padding-bottom: 250px;
+    margin-bottom: 30px;
+}
+
+.album-box {
+    position: absolute;
+    background: blue;
+    width: 250px;
+    left: 50px;
+    top: 0px;
+    height: 250px;
+}
+
 .App-link {
     color: red;
 }
