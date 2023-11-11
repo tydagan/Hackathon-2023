@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 
 
-const About = () => {
+const Result = () => {
     return (
         <div>
             <header className="Result-header">
@@ -16,7 +16,7 @@ const About = () => {
     );
 };
 
-export default About;
+export default Result;
 
 
 /*
