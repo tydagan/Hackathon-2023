@@ -20,7 +20,7 @@ const Result = ({ location }) => {
                 <a href="/"><h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3></a>
                 {/* <input type="text"></input> */}
             </header >
-            <div className="album-box"><img src="./public/algo_rhythm1.png" alt="algo rhythm"></img>></div>
+            <img className="Album-image" src="../algo_rhythm1.png" alt="Algo Rhythm"></img>
             <div className="Song-title">{word}</div>
             <div className="Song-subtitle">produced by ALGORHYTHMZ</div>
             {/* <img src="" id="event-1"></img> */}

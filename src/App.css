@@ -102,9 +102,18 @@ input[type=text] {
     padding-top: 10px;
 }
 
-.album-box {
+
+/* .album-box {
     position: absolute;
     background: blue;
+    width: 300px;
+    left: 160px;
+    top: 70px;
+    height: 300px;
+} */
+
+.Album-image {
+    position: absolute;
     width: 300px;
     left: 160px;
     top: 70px;
