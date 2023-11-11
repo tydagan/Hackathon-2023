@@ -10,6 +10,7 @@ const Result = () => {
         <div className="Result">
             <header className="Result-header">
                 <a href="/"><h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3></a>
+                <input type="text"></input>
             </header >
             <div className="album-box">insert album cover!</div>
 <<<<<<< HEAD
