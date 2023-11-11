@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
 
 
 const Result = () => {
-    const location = useLocation();
-    const { word } = location.state || {};
+    // const location = useLocation();
+    // const { word } = location.state || {};
     return (
         <div className="Result">
             <header className="Result-header">
