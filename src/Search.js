@@ -21,7 +21,7 @@ const Result = ({ location }) => {
             <div className="album-box">insert album cover!</div>
             <div className="Song-title">{word}</div>
             <div className="Song-subtitle">produced by ALGORHYTHMZ</div>
-
+            {/* <img src="" id="event-1"></img> */}
             <div className="Song-lyrics">
                 [Verse 1]<br />
                 Number one, victory royale<br />
