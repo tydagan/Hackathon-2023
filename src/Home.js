@@ -5,7 +5,7 @@ import './App.css';
 
 const Home = () => {
     return (
-        <div>
+        <div className='App'>
             <header className="App-header">
                 <h3 style={{ color: 'black' }}> algorhythmz</h3>
             </header >
