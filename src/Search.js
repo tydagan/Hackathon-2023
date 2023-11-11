@@ -1,17 +1,20 @@
 import React from 'react';
 import './App.css';
-import { useNavigate } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
 
 
-const Result = ({ location }) => {
-    const navigate = useNavigate();
-    const { state } = location || {};
-    const word = state ? state.word : null;
-    const handleGoHomeClick = () => {
-        navigate('/');
-    };
+const Result = (props) => {
+    if (!props) {
+        return (
+            <div>
+                <p>No data available</p>
+            </div>
+        );
+    }
+    const { state } = props.location;
+    const { word } = state;
+    console.log('Word:', word);
     return (
         <div className="Result">
             <header className="Result-header">
