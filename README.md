@@ -14,3 +14,6 @@ At algorhythmz.tech, all you need to do is input a one-word prompt and words fro
 * Netlify (hosting)
 * Python
 
+# Group Members
+frontend: Liam Gates, Kaitlyn Malsky
+backend: Ty Dagan, Affan Ahmed Habib
