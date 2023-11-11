@@ -1,6 +1,6 @@
 .App {
     text-align: center;
-    background-color: black;
+    background-color: white;
     min-height: 100vh;
 }
 
@@ -14,7 +14,7 @@ input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: none;
+    border: 1px;
     color: white;
 }
 
@@ -23,7 +23,8 @@ input[type=text] {
 }
 
 .App-header {
-    background-color: red;
+    background-color: #fe3a30;
+    color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +42,6 @@ input[type=text] {
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(360deg);
     }

@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h3 style={{ color: 'red' }}> algorhythmz</h3>
+        <h3 style={{ color: 'black' }}> algorhythmz</h3>
       </header >
       <div><img src={logo} className="App-logo" alt="logo" /></div>
       <form action="/search" autocomplete="off" method="GET" role="search">
