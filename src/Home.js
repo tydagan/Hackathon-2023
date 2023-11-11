@@ -20,6 +20,7 @@ const Home = () => {
     return (
         <div className="Home">
             <header className="App-header">
+<<<<<<< HEAD
                 <h3 style={{ color: 'black' }}> algorhythmz</h3>
             </header>
             <div>
@@ -59,6 +60,21 @@ const Home = () => {
                     </Link>
                 </button>
             </form>
+=======
+                <a href="/">
+                    <h3 style={{ color: 'black' }}> ALGORYTHMZ</h3>
+                </a>
+            </header >
+            <div><img src={logo} className="App-logo" alt="logo" /></div>
+            <form onSubmit={handleSubmit} action="/search" autocomplete="off" method="GET" role="search">
+                <input onChange={handleChange} name="q" type="text" inputmode="search" style={{ width: '500px', height: "30px", "border-radius": "10px", fontFamily: "sans-serif" }} />
+            </form >
+            <button value={inputValue} style={{ width: '100px', height: "30px", "border-radius": "10px", fontFamily: "sans-serif" }}>
+                <Link to="/search" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    Start
+                </Link>
+            </button>
+>>>>>>> refs/remotes/origin/routing
             <p id="info-text">Your lyrics are right here, waiting for you!</p>
         </div >
     );

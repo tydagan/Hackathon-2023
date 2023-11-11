@@ -9,13 +9,27 @@ const Result = () => {
     return (
         <div className="Result">
             <header className="Result-header">
-                <h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3>
+                <a href="/"><h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3></a>
             </header >
             <div className="album-box">insert album cover!</div>
+<<<<<<< HEAD
             <></>
             <div>
                 <p>Word received: {word}</p>
             </div>
+=======
+            <div className="Song-title">[SONG NAME]</div>
+            <div className="Song-subtitle">produced by ALGORHYTHMZ</div>
+
+            <div className="Song-lyrics">
+                [Verse 1]<br/>
+                Number one, victory royale<br/>
+                Yeah Fortnite, we bout to get down<br/>
+                (Get down)<br/>
+                Ten kills on the board right now, just wiped out Tomato Town
+            </div>
+
+>>>>>>> refs/remotes/origin/routing
         </div>
     );
 };
