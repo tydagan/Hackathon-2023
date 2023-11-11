@@ -7,7 +7,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js"
 
 const Result = ({ location }) => {
     const navigate = useNavigate();
-    const { state } = location;
+    const { state } = location || {};
     const word = state ? state.word : null;
     const handleGoHomeClick = () => {
         navigate('/');
@@ -29,10 +29,6 @@ const Result = ({ location }) => {
                 (Get down)<br />
                 Ten kills on the board right now, just wiped out Tomato Town
             </div>
-            <button className="btn btn-lg btn-primary" onClick={handleGoHomeClick}>
-                Go to Home
-            </button>
-
         </div>
     );
 };
