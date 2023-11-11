@@ -5,7 +5,14 @@ import './App.css';
 
 const Home = () => {
     return (
-        <div className='App'>
+        <div className="Home">
+            <h2>Home Page</h2>
+            <p>Welcome to the home page!</p>
+            <button>
+                <Link to="/search" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    Go to Search
+                </Link>
+            </button>
             <header className="App-header">
                 <h3 style={{ color: 'black' }}> algorhythmz</h3>
             </header >
