@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js"
 
 const Home = () => {
     const [inputValue, setInputValue] = useState('');
