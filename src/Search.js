@@ -6,9 +6,9 @@ import './App.css';
 
 const Result = () => {
     return (
-        <div>
+        <div className="Result">
             <header className="Result-header">
-                <h3 style={{ color: 'black' }}> algorhythmz</h3>
+                <h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3>
             </header >
             <div className="album-box">insert album cover!</div>
             <></>

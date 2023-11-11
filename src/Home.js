@@ -20,7 +20,7 @@ const Home = () => {
     return (
         <div className="Home">
             <header className="App-header">
-                <h3 style={{ color: 'black' }}> algorhythmz</h3>
+                <h3 style={{ color: 'black' }}> ALGORYTHMZ</h3>
             </header >
             <div><img src={logo} className="App-logo" alt="logo" /></div>
             <form onSubmit={handleSubmit} action="/search" autocomplete="off" method="GET" role="search">
