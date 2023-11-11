@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Jost');
+@import "bootstrap";
 .Home {
     text-align: center;
     background-color: white;
