@@ -11,6 +11,10 @@
     pointer-events: none;
 }
 
+.Result {
+    font-family: 'Jost';
+}
+
 input[type=text] {
     background-color: #e7e7e7;
     width: 100%;

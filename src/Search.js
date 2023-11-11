@@ -4,11 +4,11 @@ import logo from './logo.svg';
 import './App.css';
 
 
-const About = () => {
+const Result = () => {
     return (
-        <div>
+        <div className="Result">
             <header className="Result-header">
-                <h3 style={{ color: 'black' }}> algorhythmz</h3>
+                <h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3>
             </header >
             <div className="album-box">insert album cover!</div>
             <></>
@@ -16,7 +16,7 @@ const About = () => {
     );
 };
 
-export default About;
+export default Result;
 
 
 /*

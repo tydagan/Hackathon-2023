@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
 const Home = () => {
+    const navigate = useNavigate();
     const [inputValue, setInputValue] = useState('');
 
     const handleChange = (event) => {
@@ -12,8 +13,8 @@ const Home = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Do something with the input value, e.g., send it to an API, etc.
         console.log('Input Value:', inputValue);
+        navigate('/search', { state: { word: inputValue } });
     };
 
     return (
@@ -53,13 +54,13 @@ const Home = () => {
                         fontFamily: 'sans-serif',
                     }}
                 >
-                    <Link to="/search" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Link to={{ pathname: '/search', state: { word: inputValue } }} style={{ textDecoration: 'none', color: 'inherit' }}>
                         Start
                     </Link>
                 </button>
             </form>
             <p id="info-text">Your lyrics are right here, waiting for you!</p>
-        </div>
+        </div >
     );
 };
 
