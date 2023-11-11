@@ -15,6 +15,30 @@
     font-family: 'Jost';
 }
 
+.Song-title {
+    font-size: 40px;
+    color: black;
+    position: absolute;
+    left: 480px;
+    top: 70px;
+}
+
+.Song-subtitle {
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    left: 485px;
+    top: 140px;
+}
+
+.Song-lyrics {
+    font-size: 22px;
+    color: black;
+    position: absolute;
+    left: 230px;
+    top: 450px;
+}
+
 input[type=text] {
     background-color: #e7e7e7;
     width: 100%;
