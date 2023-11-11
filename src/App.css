@@ -6,6 +6,10 @@
     font-family: 'Jost';
 }
 
+.btn_primary {
+    background-color: #fe3a30 !important;
+}
+
 a:link {
     text-decoration: none;
 }
@@ -94,6 +98,7 @@ input[type=text] {
     padding-left: 10px;
     padding-bottom: 250px;
     margin-bottom: 30px;
+    padding-top: 10px;
 }
 
 .album-box {

@@ -12,10 +12,10 @@ const Result = () => {
         <div className="Result">
             <header className="Result-header">
                 <a href="/"><h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3></a>
-                <input type="text"></input>
+                {/* <input type="text"></input> */}
             </header >
             <div className="album-box">insert album cover!</div>
-            <div className="Song-title">[SONG NAME]</div>
+            <div className="Song-title">$(word)</div>
             <div className="Song-subtitle">produced by ALGORHYTHMZ</div>
 
             <div className="Song-lyrics">
