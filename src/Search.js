@@ -4,28 +4,26 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
 import { useLocation } from 'react-router-dom';
 
-// window.onload = function () {
-//     let id = Math.floor(Math.random() * 3);
-//     switch (id) {
-//         case 0:
-//             document.getElementById('image').src = "../algo_rhythm1.png"
-//             break;
-//         case 1:
-//             document.getElementById('image').src = "../algo_rhythm2.png"
-//             break;
-//         case 2:
-//             document.getElementById('image').src = "../algo_rhythm3.png"
-//             break;
-//         default:
-//             break;
-//     }
-// }
+window.onload = function () {
+    let id = Math.floor(Math.random() * 3);
+    switch (id) {
+        case 0:
+            document.getElementById('image').src = "../algo_rhythm1.png"
+            break;
+        case 1:
+            document.getElementById('image').src = "../algo_rhythm2.png"
+            break;
+        case 2:
+            document.getElementById('image').src = "../algo_rhythm3.png"
+            break;
+        default:
+            break;
+    }
+}
 
 const Result = () => {
     let { state } = useLocation();
-    console.log(state);
-    const { word } = state;
-    console.log('Word:', word);
+    let { word } = state;
     return (
         <div className="Result">
             <header className="Result-header">
