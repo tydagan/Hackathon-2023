@@ -21,7 +21,7 @@ const Home = (props) => {
             <div><img src={logo} className="App-logo" alt="logo" /></div>
             <input onChange={handleChange} value={inputText} name="q" type="text" inputMode="search" style={{ width: '500px', height: "30px", "borderRadius": "10px", fontFamily: "sans-serif" }} />
             <h3>
-                <Link className="btn btn-lg btn-primary" to={{ pathname: '/search', state: inputText }} >
+                <Link className="btn btn-lg btn-primary" to="/search" state={{ word: inputText }} >
                     Start
                 </Link>
             </h3>

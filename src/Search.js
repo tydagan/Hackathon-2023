@@ -2,33 +2,28 @@ import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
+import { useLocation } from 'react-router-dom';
 
-window.onload = function() {
-    let id = Math.floor(Math.random() * 3);
-    switch (id) {
-        case 0:
-            document.getElementById('image').src = "../algo_rhythm1.png"
-            break;
-        case 1:
-            document.getElementById('image').src = "../algo_rhythm2.png"
-            break;
-        case 2:
-            document.getElementById('image').src = "../algo_rhythm3.png"
-            break;
-        default:
-            break;
-    }
-}
+// window.onload = function () {
+//     let id = Math.floor(Math.random() * 3);
+//     switch (id) {
+//         case 0:
+//             document.getElementById('image').src = "../algo_rhythm1.png"
+//             break;
+//         case 1:
+//             document.getElementById('image').src = "../algo_rhythm2.png"
+//             break;
+//         case 2:
+//             document.getElementById('image').src = "../algo_rhythm3.png"
+//             break;
+//         default:
+//             break;
+//     }
+// }
 
-const Result = (props) => {
-    if (!props) {
-        return (
-            <div>
-                <p>No data available</p>
-            </div>
-        );
-    }
-    const { state } = props.location;
+const Result = () => {
+    let { state } = useLocation();
+    console.log(state);
     const { word } = state;
     console.log('Word:', word);
     return (
@@ -41,7 +36,7 @@ const Result = (props) => {
             <img className="Album-image" id="image" alt="Algo Rhythm"></img>
             <div className="Song-title">{word}</div>
             <div className="Song-subtitle">produced by ALGORHYTHMZ</div>
-            
+
             <div className="Song-lyrics">
                 [Verse 1]<br />
                 Number one, victory royale<br />
