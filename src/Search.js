@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
+import { useLocation } from 'react-router-dom';
 
 
 const Result = () => {
+    const location = useLocation();
+    const { word } = location.state || {};
     return (
         <div className="Result">
             <header className="Result-header">
@@ -12,6 +13,9 @@ const Result = () => {
             </header >
             <div className="album-box">insert album cover!</div>
             <></>
+            <div>
+                <p>Word received: {word}</p>
+            </div>
         </div>
     );
 };
