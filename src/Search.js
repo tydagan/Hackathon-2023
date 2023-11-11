@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
 
 
+
+
 const Result = ({ location }) => {
     const navigate = useNavigate();
     const { state } = location || {};
@@ -18,7 +20,7 @@ const Result = ({ location }) => {
                 <a href="/"><h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3></a>
                 {/* <input type="text"></input> */}
             </header >
-            <div className="album-box">insert album cover!</div>
+            <div className="album-box"><img src="./public/algo_rhythm1.png" alt="algo rhythm"></img>></div>
             <div className="Song-title">{word}</div>
             <div className="Song-subtitle">produced by ALGORHYTHMZ</div>
             {/* <img src="" id="event-1"></img> */}
