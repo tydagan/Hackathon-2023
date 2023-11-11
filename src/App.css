@@ -1,6 +1,6 @@
 .App {
     text-align: center;
-    background-color: #282c34;
+    background-color: black;
     min-height: 100vh;
 }
 
@@ -19,11 +19,11 @@ input[type=text] {
 }
 
 ::placeholder {
-    color: #282c34;
+    color: black;
 }
 
 .App-header {
-    background-color: #ea4d3d;
+    background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,13 +34,14 @@ input[type=text] {
 }
 
 .App-link {
-    color: #ea4d3d;
+    color: red;
 }
 
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
