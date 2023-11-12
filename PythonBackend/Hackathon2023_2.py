@@ -285,6 +285,7 @@ def main():
     for line in output_rap:
         print(line)
 
+    return output_rap
 
 if __name__ == "__main__":
     main()
