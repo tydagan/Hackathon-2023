@@ -15,7 +15,7 @@ const Home = (props) => {
         <div className="Home">
             <header className="App-header">
                 <a href="/">
-                    <h3 style={{ color: 'black' }}> ALGORYTHMZ</h3>
+                    <h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3>
                 </a>
             </header >
             <div><img src={logo} className="App-logo" alt="logo" /></div>

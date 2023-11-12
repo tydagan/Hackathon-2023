@@ -9,16 +9,6 @@ import algoRhythm3 from './images/algo_rhythm3.png';
 
 
 const Result = () => {
-    let { state } = useLocation();
-    let { word } = state;
-    const [pythonResult, setPythonResult] = useState('');
-
-    useEffect(() => {
-        fetch('http://localhost:5000/api/call-python')
-            .then(response => response.json())
-            .then(data => setPythonResult(data.result))
-            .catch(error => console.error('Error:', error));
-    }, []);
     useEffect(() => {
         let id = Math.floor(Math.random() * 3);
         let imageElement = document.getElementById('image');
@@ -37,6 +27,8 @@ const Result = () => {
                 break;
         }
     }, []);
+    let { state } = useLocation();
+    let { word } = state;
     return (
         <div className="Result">
             <header className="Result-header">
