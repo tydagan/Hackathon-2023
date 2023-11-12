@@ -8,7 +8,7 @@
 }
 
 .btn_primary {
-    background-color: #fe3a30 !important;
+    @include button variant(#fe3a30)
 }
 
 a:link {
