@@ -1,5 +1,7 @@
 # algorhythmz
 
+![alt text for cool dude](./src/images/cooldudehackumass.png)
+
 <em> Built for for HackUMass XI </em>
 
 Generate the freestyle rap of your dreams at [algorhythmz.tech](https://algorhythmz.tech)!
