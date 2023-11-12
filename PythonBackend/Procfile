@@ -1,0 +1,1 @@
+web: gunicorn Hackathon2023_2:app
