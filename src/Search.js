@@ -8,13 +8,13 @@ window.onload = function () {
     let id = Math.floor(Math.random() * 3);
     switch (id) {
         case 0:
-            document.getElementById('image').src = "../algo_rhythm1.png"
+            document.getElementById('image').src = "/algo_rhythm1.png"
             break;
         case 1:
-            document.getElementById('image').src = "../algo_rhythm2.png"
+            document.getElementById('image').src = "/algo_rhythm2.png"
             break;
         case 2:
-            document.getElementById('image').src = "../algo_rhythm3.png"
+            document.getElementById('image').src = "/algo_rhythm3.png"
             break;
         default:
             break;
