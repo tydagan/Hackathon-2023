@@ -5,12 +5,18 @@ from nltk.corpus import cmudict
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 import time
-import json 
+import json
 from collections import defaultdict
 import string
-import pronouncing 
+import pronouncing
+from flask import Flask
+from flask_cors import CORS
 import random
 from collections import OrderedDict
+
+app = Flask(__name__)
+CORS(app, origins="http://localhost:3000")
+
 
 def get_song_lines(input_file_path):
     song_lines = []
@@ -20,25 +26,28 @@ def get_song_lines(input_file_path):
             song_lines.append(line.strip().lower())
     return song_lines
 
-#get lines containing an input word
+# get lines containing an input word
+
+
 def get_lines(input_word, song_lines):
     # lines_with_input_word = [line for line in song_lines if input_word in line]
     regex_pattern = r'\b' + re.escape(input_word) + r'\b'
-    lines_with_input_word = [line for line in song_lines if re.search(regex_pattern, line)]
+    lines_with_input_word = [
+        line for line in song_lines if re.search(regex_pattern, line)]
     return lines_with_input_word
 
 
 def get_related_words_from_website(input_word):
     url = f"https://relatedwords.io/{input_word}"
-    
+
     user_agent = UserAgent()
 
-    headers = {'User-Agent': user_agent.random}    
+    headers = {'User-Agent': user_agent.random}
 
     time.sleep(5)
 
     response = requests.get(url, headers=headers)
-    
+
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -51,7 +60,8 @@ def get_related_words_from_website(input_word):
 
             if term_list:
                 # Find all li tags within the term list
-                related_words = [li.text.strip() for li in term_list.find_all('li')]
+                related_words = [li.text.strip()
+                                 for li in term_list.find_all('li')]
                 return related_words
             else:
                 print("Error: Unable to find the term list on the page.")
@@ -61,17 +71,20 @@ def get_related_words_from_website(input_word):
             return []
 
     else:
-        print(f"Error: Unable to fetch data. Status code: {response.status_code}")
+        print(
+            f"Error: Unable to fetch data. Status code: {response.status_code}")
         return []
 
 # Function to extract the first word from each line in a text file
+
+
 def extract_first_words_from_file(file_path):
     first_words = []
     with open(file_path, 'r') as file:
         for line in file:
             words = line.lower().strip().split()
-  
-            if words:  
+
+            if words:
                 first_words.append(words[0])
 
     return first_words
@@ -83,7 +96,8 @@ def extract_last_word(line):
         return words[-1]
     else:
         return None
-    
+
+
 def word_to_lines(input_file_path):
     word_to_lines_dict = {}
 
@@ -93,8 +107,9 @@ def word_to_lines(input_file_path):
             if len(parts) == 2:
                 word, line_numbers = parts
                 word = word.strip().lower()
-                line_numbers = [int(num.strip()) for num in line_numbers.split(',')]
-                
+                line_numbers = [int(num.strip())
+                                for num in line_numbers.split(',')]
+
                 if word in word_to_lines_dict:
                     word_to_lines_dict[word].extend(line_numbers)
                 else:
@@ -116,11 +131,15 @@ def get_phonetic_ending(word):
     else:
         return None
 
-#TODO: define metric function. rhymability should be big factor
+# TODO: define metric function. rhymability should be big factor
+
+
 def metric_function_rhymability(line):
     print()
 
-#returns line with best metric score
+# returns line with best metric score
+
+
 def get_best_line_tuple1(rap_lines, song_lines):
     best_line = None
     best_score = float('-inf')  # Initialize with negative infinity
@@ -131,17 +150,17 @@ def get_best_line_tuple1(rap_lines, song_lines):
 
         rap_line_lyrics.append(line)
 
-        #score = metric_function_rhymability(line)
+        # score = metric_function_rhymability(line)
         score = 0
         if score > best_score:
             best_score = score
             best_line = line
 
     return random.choice(rap_line_lyrics)
-    #return best_line
+    # return best_line
 
 
-#TODO: returns the best line, considering the line before as well
+# TODO: returns the best line, considering the line before as well
 def get_best_line_tuple2(previous_rhyme, rap_lines, song_lines):
     lines = []
     for line_num in rap_lines:
@@ -149,6 +168,7 @@ def get_best_line_tuple2(previous_rhyme, rap_lines, song_lines):
         lines.append(line)
 
     return random.choice(lines)
+
 
 def compare_lines(line1, line2):
     last_word1 = extract_last_word(line1)
@@ -172,6 +192,7 @@ def compare_lines(line1, line2):
     else:
         return False
 
+
 def get_first_tuple_line(related_word, word_to_lines_dict, song_lines):
     related_lines = word_to_lines_dict[related_word]
 
@@ -190,28 +211,30 @@ def get_first_tuple_line(related_word, word_to_lines_dict, song_lines):
 
 #         if compare_lines(previous_rhyme, line):
 #             rhyme_compatible_lines.append(line)
-    
+
 #     if rhyme_compatible_lines == []:
 #         return []
-    
+
 #    return get_best_line_tuple2(previous_rhyme, rhyme_compatible_lines, song_lines)
+
 
 def get_random_line_tuple1(related_lines_nums, song_lines, first_words):
     lines = []
 
     for line_num in related_lines_nums:
         line = song_lines[line_num - 1]
-        last_word = extract_last_word(line) 
+        last_word = extract_last_word(line)
         if last_word in first_words:
             lines.append(line)
     if lines == []:
         return ""
-    
+
     return random.choice(lines)
+
 
 def get_second_tuple_line(previous_rhyme, related_line_nums, song_lines):
     lines = []
-    
+
     total_lines = []
 
     for line_num in related_line_nums:
@@ -224,40 +247,43 @@ def get_second_tuple_line(previous_rhyme, related_line_nums, song_lines):
         return ""
     return random.choice(lines)
 
+
+@app.route('/<input_word>', methods=['GET'])
 def main(input_word):
+    print("New request:", input_word)
     # Specify the path to the song_lines.txt file
     input_file_path = 'song_lines_processed_FINAL.txt'
 
     # List to store the lines from the file
     song_lines = get_song_lines(input_file_path)
     num_related_words = 80
-    
+
     # related_words = get_related_words_from_website("beach")[:num_related_words]
     # split_words = [word for words in related_words for word in words.split()]
     # related_words = list(set(word for word in split_words if len(word.split()) == 1))
 
-
     file_path = 'cmudict-0.7b'
     first_word_list = extract_first_words_from_file(file_path)
 
-    related_words = get_related_words_from_website(input_word)[:num_related_words]
-    flattened_words = [word for words in related_words for word in words.split()]
+    related_words = get_related_words_from_website(input_word)[
+        : num_related_words]
+    flattened_words = [
+        word for words in related_words for word in words.split()]
     ordered_dict = OrderedDict.fromkeys(flattened_words)
     related_words = list(ordered_dict.keys())
 
-
     word_to_lines_dict = word_to_lines('word_to_lines_combined.txt')
 
-
     output_rap = []
-    #generating rap
+    # generating rap
     # first_line = get_first_tuple_line(related_words[0], word_to_lines_dict, song_lines)
     # output_rap.append(first_line)
 
-    #prev_rhyme = extract_last_word(first_line)
+    # prev_rhyme = extract_last_word(first_line)
 
     prev_rhyme = ""
     i = 0
+    print(output_rap)
     while len(output_rap) < 16 and i < len(related_words):
         curr_related_word = related_words[i]
         if len(curr_related_word) <= 2:
@@ -269,23 +295,24 @@ def main(input_word):
             i += 1
             continue
 
-        if len(output_rap) % 2 == 0:        #first tuple
-            line_retrieved = get_random_line_tuple1(related_line_nums, song_lines, first_word_list)
+        if len(output_rap) % 2 == 0:  # first tuple
+            line_retrieved = get_random_line_tuple1(
+                related_line_nums, song_lines, first_word_list)
 
             if line_retrieved != "" and len(line_retrieved) < 80:
                 output_rap.append(line_retrieved)
-        else:                               #second tuple
-            line_retrieved = get_second_tuple_line(prev_rhyme, related_line_nums, song_lines)
+        else:  # second tuple
+            line_retrieved = get_second_tuple_line(
+                prev_rhyme, related_line_nums, song_lines)
             if line_retrieved != "" and len(line_retrieved) < 80:
                 output_rap.append(line_retrieved)
         if line_retrieved != "":
-            prev_rhyme = extract_last_word(line_retrieved)   
+            prev_rhyme = extract_last_word(line_retrieved)
         i += 1
-
     for line in output_rap:
         print(line)
+    return json.dumps(output_rap)
 
-    return output_rap
 
 if __name__ == "__main__":
-    main()
+    app.run(port=5001)
