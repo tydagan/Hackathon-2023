@@ -1,27 +1,32 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
 import { useLocation } from 'react-router-dom';
+import algoRhythm1 from './images/algo_rhythm1.png';
+import algoRhythm2 from './images/algo_rhythm2.png';
+import algoRhythm3 from './images/algo_rhythm3.png';
 
-window.onload = function () {
-    let id = Math.floor(Math.random() * 3);
-    switch (id) {
-        case 0:
-            document.getElementById('image').src = "../algo_rhythm1.png"
-            break;
-        case 1:
-            document.getElementById('image').src = "../algo_rhythm2.png"
-            break;
-        case 2:
-            document.getElementById('image').src = "../algo_rhythm3.png"
-            break;
-        default:
-            break;
-    }
-}
 
 const Result = () => {
+    useEffect(() => {
+        let id = Math.floor(Math.random() * 3);
+        let imageElement = document.getElementById('image');
+
+        switch (id) {
+            case 0:
+                imageElement.src = process.env.PUBLIC_URL + algoRhythm1;
+                break;
+            case 1:
+                imageElement.src = process.env.PUBLIC_URL + algoRhythm2;
+                break;
+            case 2:
+                imageElement.src = process.env.PUBLIC_URL + algoRhythm3;
+                break;
+            default:
+                break;
+        }
+    }, []);
     let { state } = useLocation();
     let { word } = state;
     return (
