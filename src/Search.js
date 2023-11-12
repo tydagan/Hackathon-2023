@@ -13,7 +13,7 @@ const Result = () => {
 
     const [data, setData] = useState(null);
     useEffect(() => {
-        fetch(`https://localhost:5001/${word}`).then(res => res.json()).then(data => { setData(data); console.log(data); }).catch(err => console.error(err));
+        fetch(`http://localhost:5001/${word}`).then(res => res.json()).then(data => { setData(data); console.log(data); }).catch(err => console.error(err));
 
     }, [word]);
 

@@ -15,7 +15,7 @@ import random
 from collections import OrderedDict
 
 app = Flask(__name__)
-CORS(app, origins="https://localhost:3000")
+CORS(app, origins="https://algorhythmz.tech")
 
 
 def get_song_lines(input_file_path):
