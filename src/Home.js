@@ -11,6 +11,7 @@ const Home = () => {
     const handleChange = (e) => {
         setInputText(e.target.value);
     };
+    console.log("Home");
     return (
         <div className="Home">
             <header className="App-header">

@@ -15,7 +15,7 @@ const Result = () => {
     useEffect(() => {
         fetch(`http://localhost:5001/${word}`).then(res => res.json()).then(data => { setData(data); console.log(data); }).catch(err => console.error(err));
 
-    });
+    }, [word]);
 
     if (data === null) {
         return <p>Loading...</p>;
