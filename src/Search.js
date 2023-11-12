@@ -33,8 +33,6 @@ const Result = () => {
         <div className="Result">
             <header className="Result-header">
                 <a href="/"><h3 style={{ color: 'black' }}> ALGORHYTHMZ</h3></a>
-                {/* <a href="/"></a> */}
-                {/* <input type="text"></input> */}
             </header >
             <img className="Album-image" id="image" alt="Algo Rhythm"></img>
             <div className="Song-title">{word}</div>
