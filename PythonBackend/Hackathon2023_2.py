@@ -224,7 +224,7 @@ def get_second_tuple_line(previous_rhyme, related_line_nums, song_lines):
         return ""
     return random.choice(lines)
 
-def main():
+def main(input_word):
     # Specify the path to the song_lines.txt file
     input_file_path = 'song_lines_processed_FINAL.txt'
 
@@ -240,7 +240,7 @@ def main():
     file_path = 'cmudict-0.7b'
     first_word_list = extract_first_words_from_file(file_path)
 
-    related_words = get_related_words_from_website("umass")[:num_related_words]
+    related_words = get_related_words_from_website(input_word)[:num_related_words]
     flattened_words = [word for words in related_words for word in words.split()]
     ordered_dict = OrderedDict.fromkeys(flattened_words)
     related_words = list(ordered_dict.keys())
