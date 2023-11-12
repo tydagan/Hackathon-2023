@@ -23,7 +23,7 @@ const Home = (props) => {
             <p id="info-text">***One word only!***</p>
             <input onChange={handleChange} value={inputText} name="q" type="text" inputMode="search" style={{ width: '500px', height: "30px", "borderRadius": "10px", fontFamily: "sans-serif" }} />
             <h3>
-                <Link className="btn btn-lg btn-primary" to="/search" state={{ word: inputText }} >
+                <Link className="btn btn-lg btn-outline-dark" to="/search" state={{ word: inputText }} >
                     Start
                 </Link>
             </h3>
