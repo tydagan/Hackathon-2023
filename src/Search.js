@@ -7,25 +7,6 @@ import algoRhythm1 from './images/algo_rhythm1.png';
 import algoRhythm2 from './images/algo_rhythm2.png';
 import algoRhythm3 from './images/algo_rhythm3.png';
 
-<<<<<<< HEAD
-=======
-window.onload = function () {
-    let id = Math.floor(Math.random() * 3);
-    switch (id) {
-        case 0:
-            document.getElementById('image').src = "/algo_rhythm1.png"
-            break;
-        case 1:
-            document.getElementById('image').src = "/algo_rhythm2.png"
-            break;
-        case 2:
-            document.getElementById('image').src = "/algo_rhythm3.png"
-            break;
-        default:
-            break;
-    }
-}
->>>>>>> refs/remotes/origin/routing
 
 const Result = () => {
     useEffect(() => {
