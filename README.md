@@ -1,3 +1,5 @@
+Note: the public domain is not yet set up
+
 # algorhythmz
 
 ![alt text for cool dude](./src/images/cooldudehackumass.png)
